@@ -1,0 +1,22 @@
+{
+	"pbb-dev": {
+
+		"mariadb": {
+			"host": "localhost"
+		},
+		"redis": {
+			"port": 6379,
+			"host": "localhost",
+			"client": "client",
+			"ttl": 260
+		},
+		"common": {
+			"tokenSecret":"loremipsumdolorsit4met"
+		},
+		"cookie": {
+			"name": "developmentCookieIsTheBest",
+			"age": 6000000,
+			"secret": "a3fda9a5c38c21a3da81ec074f15d4f5"
+		}
+	}
+}

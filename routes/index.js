@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
+var auth = require('../controller/authController');
+var apps = require('../controller/appController');
+module.exports = function (app, passport) {
+		app.get('/', apps.dashboard);
+    app.get('/dashoard', auth.auth);
+}
+	// route middleware to ensure user is logged in
+function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated())
+		return next();
+	res.redirect('/');
+}
