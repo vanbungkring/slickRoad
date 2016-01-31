@@ -15,5 +15,10 @@ var app = {
 		})
 
 	},
+	search:function (req, res) {
+		res.render('searchData/index',{
+			title:'search data'
+		})
+	}
 }
 module.exports = app;
