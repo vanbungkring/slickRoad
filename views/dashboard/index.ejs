@@ -17,8 +17,8 @@
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
-          <div class="dataTable_wrapper">
-            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="pbbDataTables">
               <thead>
                 <tr>
                   <th>KD_PROPINSI</th>
@@ -27,14 +27,19 @@
                   <th>NO_FORMULIR_SPOP</th>
                   <th>TOTAL_LUAS_BUMI</th>
                   <th>TOTAL_LUAS_BNG</th>
+                  <th>TOTAL_LUAS_BNG</th>
+                  <th>TOTAL_LUAS_BNG</th>
                 </tr>
               </thead>
               <tbody>
                 <% result.forEach(function(el,index) {%>
                   <tr class="odd gradeX">
-                    <td><%=el.KD_PROPINSI%></td>
+                    <td><%=index+1%></td>
                     <td><%=el.KD_KELURAHAN%></td>
                     <td><%=el.KD_KECAMATAN%></td>
+                    <td><%=el.NO_FORMULIR_SPOP%></td>
+                    <td><%=el.TOTAL_LUAS_BUMI%></td>
+                    <td><%=el.TOTAL_LUAS_BNG%></td>
                     <td><%=el.NO_FORMULIR_SPOP%></td>
                     <td><%=el.TOTAL_LUAS_BUMI%></td>
                     <td><%=el.TOTAL_LUAS_BNG%></td>
