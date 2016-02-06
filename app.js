@@ -53,11 +53,11 @@ var allowCrossDomain = function (req, res, next) {
 	next();
 };
 
-require('./config/passport')(passport); // pass passport for configuration
+// require('./config/passport')(passport); // pass passport for configuration
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(logger('dev'));
 
-app.use(express.static(path.join(__dirname, 'public/bower_components')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 var sessionOpts = {
   saveUninitialized: true, // saved new sessions
@@ -79,12 +79,12 @@ app.use(cookieParser());
 app.use(cookieParser(configuration.cookie.secret))
 app.use(session(sessionOpts))
 
-app.use(passport.initialize())
-app.use(passport.session())
+//app.use(passport.initialize())
+//app.use(passport.session())
 
 app.use(flash()); // use connect-flash for flash messages stored in session
 // mongoose.connect(configuration.dbConfig.host);
-require('./routes/index.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./routes/index.js')(app/*, passport*/); // load our routes and pass in our app and fully configured passport
 
 app.use(function (req, res, next) {
 	var err = new Error('Not Found');
